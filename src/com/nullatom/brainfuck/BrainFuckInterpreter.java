@@ -11,7 +11,7 @@ public class BrainFuckInterpreter {
 	public static final char MINUS = '-';//减
 	public final static char BRACKET_LEFT = '[';//循环左括号
 	public final static char BRACKET_RIGHT = ']';//循环右括号
-	public static int[] container = null;
+	public static long[] container = null;
 	
 	public static int containerPointer = 0;
 	public String code = "";
@@ -28,7 +28,7 @@ public class BrainFuckInterpreter {
 		// TODO Auto-generated constructor stub
 		this.code = code;
 		codes = code.toCharArray();
-		container = new int[len];
+		container = new long[len];
 	}
 
 	public void start() {
@@ -106,7 +106,7 @@ public class BrainFuckInterpreter {
 			case INPUT://输入
 				Long startInputTime = System.currentTimeMillis();
 				System.out.print("输入到"+containerPointer+"：");
-				container[containerPointer] = new Scanner(System.in).nextInt();
+				container[containerPointer] = new Scanner(System.in).nextLong();
 				codePointer++;
 				startTime = startTime + (System.currentTimeMillis() - startInputTime);
 				break;
@@ -132,7 +132,7 @@ public class BrainFuckInterpreter {
 		System.out.println("BrainFuck运行总耗时："+(System.currentTimeMillis() - startTime)+"ms");
 		System.out.println("容器中的内容：");
 		int i = 0;
-		for(int a : BrainFuckInterpreter.container) { System.out.println("["+i+"] -> "+a); i++;}
+		for(long a : BrainFuckInterpreter.container) { System.out.println("["+i+"] -> "+a); i++;}
 		System.out.println("============");
 
 	}
