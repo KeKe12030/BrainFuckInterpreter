@@ -124,7 +124,7 @@ public class BrainFuckInterpreter {
 
 	public static void main(String[] args) {
 		if(args.length != 2) {
-			throw new RuntimeException("参数格式错误！\n提示：第一个参数为：容器长度\n第二个参数为：代码 / 代码文件");
+			throw new RuntimeException("参数格式错误！\n提示：第一个参数为：容器长度\n第二个参数为：BrainFuck代码文字");
 		}
 		BrainFuckInterpreter bfi = new BrainFuckInterpreter(Integer.valueOf(args[0]),args[1]);
 		bfi.start();
